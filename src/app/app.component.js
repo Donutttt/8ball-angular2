@@ -16,16 +16,22 @@ var AppComponent = (function () {
         this.mainEightball = new _8ball_1.EightBall();
     }
     AppComponent.prototype.questionCallback = function (text) {
-        console.log("text:" + text);
+        this.mainEightball.setNewAnswer();
+        console.log(this.mainEightball.currentAnswer);
+    };
+    ;
+    AppComponent.prototype.getRandomAnswer = function () {
+        return this.mainEightball.getRandomAnswer();
     };
     ;
     AppComponent.prototype.ngOnInit = function () {
         console.log('AppComponent initializing...');
+        this.boundQuestionCallback = this.questionCallback.bind(this);
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n      <h1>This is a test header</h1>\n      <question-input [callback]=\"questionCallback\"></question-input>\n      <eightball [eightball]=\"mainEightball\"></eightball>\n    "
+            template: "\n      <h1>The magic 8 ball</h1>\n      <question-input [callback]=\"boundQuestionCallback\"></question-input>\n      <eightball [eightball]=\"mainEightball\"></eightball>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

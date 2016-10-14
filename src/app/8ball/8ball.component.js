@@ -12,7 +12,12 @@ var core_1 = require('@angular/core');
 var _8ball_1 = require('./8ball');
 var EightBallComponent = (function () {
     function EightBallComponent() {
+        this.selectingState = 'inactive';
     }
+    EightBallComponent.prototype.toggleState = function () {
+        this.selectingState = this.selectingState == 'inactive' ? 'active' : 'inactive';
+    };
+    ;
     __decorate([
         core_1.Input(), 
         __metadata('design:type', _8ball_1.EightBall)
@@ -20,7 +25,7 @@ var EightBallComponent = (function () {
     EightBallComponent = __decorate([
         core_1.Component({
             selector: 'eightball',
-            template: "\n    <p>This is the eightball template</p>\n    <div *ngIf=\"eightball\">\n        <ul>\n          <li *ngFor=\"let answer of eightball.answers\">{{ answer.text }}</li>\n        </ul>\n    </div>\n  "
+            template: "\n    <div *ngIf=\"eightball\">\n        <p (click)=\"toggleState()\">{{ eightball.currentAnswer }}</p>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EightBallComponent);

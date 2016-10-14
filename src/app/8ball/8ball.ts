@@ -25,5 +25,15 @@ export class EightBall{
         new Answer("Very doubtful", -1)
     ];
 
+    currentAnswer: string = '';
+
+    getRandomAnswer(): string{
+        return this.answers[Math.floor(this.answers.length * Math.random())].text;
+    };
+
+    setNewAnswer(): void{
+        this.currentAnswer = this.getRandomAnswer();
+    };
+
 
 }

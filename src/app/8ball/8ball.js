@@ -24,7 +24,16 @@ var EightBall = (function () {
             new answer_1.Answer("Outlook not so good", -1),
             new answer_1.Answer("Very doubtful", -1)
         ];
+        this.currentAnswer = '';
     }
+    EightBall.prototype.getRandomAnswer = function () {
+        return this.answers[Math.floor(this.answers.length * Math.random())].text;
+    };
+    ;
+    EightBall.prototype.setNewAnswer = function () {
+        this.currentAnswer = this.getRandomAnswer();
+    };
+    ;
     return EightBall;
 }());
 exports.EightBall = EightBall;

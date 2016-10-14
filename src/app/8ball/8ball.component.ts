@@ -1,17 +1,27 @@
 import { Component, Input } from '@angular/core';
 import { EightBall } from './8ball';
 
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from '@angular/core';
+
 @Component({
   selector: 'eightball',
   template: `
-    <p>This is the eightball template</p>
     <div *ngIf="eightball">
-        <ul>
-          <li *ngFor="let answer of eightball.answers">{{ answer.text }}</li>
-        </ul>
+        <p (click)="toggleState()">{{ eightball.currentAnswer }}</p>
     </div>
   `
 })
 export class EightBallComponent{
     @Input() eightball: EightBall;
+    selectingState: string = 'inactive';
+
+    toggleState(): void{
+        this.selectingState = this.selectingState == 'inactive' ? 'active' : 'inactive';
+    };
 }
