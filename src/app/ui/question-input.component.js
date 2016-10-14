@@ -9,16 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AboutComponent = (function () {
-    function AboutComponent() {
+var QuestionInput = (function () {
+    function QuestionInput() {
+        this.questionHint = 'Ask a question';
+        this.buttonText = 'Ask';
     }
-    AboutComponent = __decorate([
+    QuestionInput = __decorate([
         core_1.Component({
-            selector: 'about',
-            template: require('./about.component.html')
+            selector: 'question-input',
+            template: "\n        <div class=\"question-input wrapper\">\n            <input type=\"text\" placeholder=\"{{ questionHint }}\" />\n            <button>{{ buttonText }}</button>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], AboutComponent);
-    return AboutComponent;
+    ], QuestionInput);
+    return QuestionInput;
 }());
-exports.AboutComponent = AboutComponent;
+exports.QuestionInput = QuestionInput;

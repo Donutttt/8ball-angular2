@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
-var home_component_1 = require('./home/home.component');
-var about_component_1 = require('./about/about.component');
 var answer_component_1 = require('./answer/answer.component');
+var _8ball_component_1 = require('./8ball/8ball.component');
+var question_input_component_1 = require('./ui/question-input.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,9 +21,9 @@ var AppModule = (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                about_component_1.AboutComponent,
-                answer_component_1.AnswerComponent
+                answer_component_1.AnswerComponent,
+                _8ball_component_1.EightBallComponent,
+                question_input_component_1.QuestionInput
             ],
             imports: [
                 platform_browser_1.BrowserModule

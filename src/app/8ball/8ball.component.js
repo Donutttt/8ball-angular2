@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomeComponent = (function () {
-    function HomeComponent() {
+var _8ball_1 = require('./8ball');
+var EightBallComponent = (function () {
+    function EightBallComponent() {
     }
-    HomeComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', _8ball_1.EightBall)
+    ], EightBallComponent.prototype, "eightball", void 0);
+    EightBallComponent = __decorate([
         core_1.Component({
-            selector: 'home',
-            template: require('./home.component.html')
+            selector: 'eightball',
+            template: "\n    <p>This is the eightball template</p>\n    <div *ngIf=\"eightball\">\n        <ul>\n          <li *ngFor=\"let answer of eightball.answers\">{{ answer.text }}</li>\n        </ul>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeComponent);
-    return HomeComponent;
+    ], EightBallComponent);
+    return EightBallComponent;
 }());
-exports.HomeComponent = HomeComponent;
+exports.EightBallComponent = EightBallComponent;
