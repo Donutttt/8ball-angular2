@@ -11,13 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var QuestionInput = (function () {
     function QuestionInput() {
+        this.callback = function () { return true; };
+        this.questionText = '';
         this.questionHint = 'Ask a question';
         this.buttonText = 'Ask';
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Function)
+    ], QuestionInput.prototype, "callback", void 0);
     QuestionInput = __decorate([
         core_1.Component({
             selector: 'question-input',
-            template: "\n        <div class=\"question-input wrapper\">\n            <input type=\"text\" placeholder=\"{{ questionHint }}\" />\n            <button>{{ buttonText }}</button>\n        </div>\n    "
+            template: "\n        <div class=\"question-input wrapper\">\n            <input (ngModel)=\"questionText\" type=\"text\" placeholder=\"{{ questionHint }}\" />\n            <button  (click)=\"callback(questionText)\" >{{ buttonText }}</button>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], QuestionInput);

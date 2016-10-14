@@ -11,7 +11,7 @@ import '../css/main.css';
     selector: 'my-app',
     template: `
       <h1>This is a test header</h1>
-      <question-input></question-input>
+      <question-input [callback]="questionCallback"></question-input>
       <eightball [eightball]="mainEightball"></eightball>
     `
 })
@@ -19,6 +19,10 @@ import '../css/main.css';
 export class AppComponent implements OnInit {
 
     mainEightball: EightBall = new EightBall();
+
+    questionCallback(text: string){
+        console.log("text:" + text);
+    };
 
     ngOnInit() {
         console.log('AppComponent initializing...');
